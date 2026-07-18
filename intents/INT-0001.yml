@@ -2,10 +2,11 @@ uid: INT-0001
 type: intent
 status: approved
 title: A tenant can read and act on the rent-statement help page
-text: 'The council publishes a help page explaining how to read a rent statement.
-  A tenant must be able to understand it on first reading, the page must follow the
-  council''s British-English house style, and it must read in the council''s formal
-  register. Being readable, being correctly styled and being in the right register
-  are independent goals, so the page adopts a readability standard, a conventions
-  standard and a tone standard.'
+text: 'The council publishes a help page explaining how to read a rent statement and
+  pay what is owed. A tenant must be able to understand it on first reading, the page
+  must follow the council''s British-English house style, it must read in the
+  council''s formal register, and it must do its job of instructing the tenant.
+  Being readable, being correctly styled, being in the right register and serving the
+  right purpose are independent goals, so the page adopts a readability standard, a
+  conventions standard, a tone standard and a purpose standard.'
 normative: false

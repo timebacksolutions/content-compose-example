@@ -5,22 +5,26 @@ format_version = 2
 # A worked example of a *composed* content project. This is an ordinary throughline
 # project — its own intent, user requirements and system requirements live under
 # intents/, user-requirements/ and system-requirements/ — that additionally adopts
-# THREE orthogonal content standards by reference and cites their clauses on the
+# FOUR orthogonal content standards by reference and cites their clauses on the
 # system requirements they satisfy:
 #   - Plain-language (readability)        namespace `plain`
 #   - British-English conventions         namespace `conventions`
 #   - Tone — formal register              namespace `tone`
+#   - Purpose — instruct                  namespace `purpose`
 #
 # This is the orthogonality payoff: one page has to be readable AND correctly styled
-# AND in the right register, and those are independent axes. The project takes
-# exactly the three axes it needs and cites `plain:SR-NNNN`, `conventions:SR-NNNN`
-# and `tone:SR-NNNN` side by side. The three sources never collide even though each
-# numbers its items SR-0001 upward, because each is imported under its own namespace.
+# AND in the right register AND doing the right communicative job, and those are
+# independent axes. The project takes exactly the four axes it needs and cites
+# `plain:SR-NNNN`, `conventions:SR-NNNN`, `tone:SR-NNNN` and `purpose:SR-NNNN` side by
+# side. The four sources never collide even though each numbers its items SR-0001
+# upward, because each is imported under its own namespace.
 #
-# The register axis is a family of mutually-exclusive sibling sources
-# (throughline-tone-formal / -neutral / -informal); a government rent-statement page
-# composes the FORMAL sibling. A different page would swap the one `ref`/`url` for
-# another register without touching the readability or conventions axes.
+# Two of these axes are families of mutually-exclusive sibling sources: register
+# (throughline-tone-formal / -neutral / -informal) and purpose
+# (throughline-purpose-inform / -instruct / -persuade). A government rent-statement
+# help page composes the FORMAL register and the INSTRUCT purpose — its job is to help
+# a tenant read the statement and pay. A marketing page would swap `tone` for the
+# informal sibling and `purpose` for persuade, without touching the other axes.
 #
 # Drive this project with `tl-compose`, never bare `tl`: the composition-aware
 # `check` merges the sources into one union graph and validates it. Bare `tl` fails
@@ -45,6 +49,11 @@ namespace = "tone"
 url = "https://github.com/timebacksolutions/throughline-tone-formal"
 ref = "v2026-07"
 
+[[sources]]
+namespace = "purpose"
+url = "https://github.com/timebacksolutions/throughline-purpose-instruct"
+ref = "v2026-07"
+
 [grounding]
 root_types = ["intent"]
 delivery_roots = ["intent"]
@@ -52,7 +61,7 @@ ground_link_types = ["derives_from", "implements"]
 ai_origins = ["ai", "hybrid"]
 
 # The union is governed by THIS schema, so the consumer must declare types, links and
-# statuses that are a superset of what every source uses internally. All three sources
+# statuses that are a superset of what every source uses internally. All four sources
 # mark source_ref required and carry a `principle` grouping attr on their rules; here
 # those are optional, which still accepts the sources' items while not forcing this
 # project's own items to carry them.
@@ -70,8 +79,8 @@ types = ["derives_from", "implements", "satisfies", "relates"]
 derives_from = { from = ["user_requirement"], to = ["intent"] }
 implements   = { from = ["system_requirement"], to = ["user_requirement"] }
 # The borrowed-clause link: a page requirement satisfies a plain-language,
-# conventions or tone rule. `satisfies` is a traceability link, not a grounding link,
-# so a page SR still grounds through `implements`, not through the borrowed standard.
+# conventions, tone or purpose rule. `satisfies` is a traceability link, not a
+# grounding link, so a page SR still grounds through `implements`, not the standard.
 satisfies    = { from = ["system_requirement"], to = ["system_requirement"] }
 
 [status]

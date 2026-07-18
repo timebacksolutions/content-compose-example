@@ -1,0 +1,11 @@
+uid: SR-0007
+type: system_requirement
+status: approved
+title: Tell the tenant what to do if the amount looks wrong
+text: 'The page tells the tenant how to query the statement or report a problem if
+  the amount due does not look right, so they can recover rather than stall.'
+links:
+- target: UR-0001
+  type: implements
+- target: "purpose:SR-0010"
+  type: satisfies
