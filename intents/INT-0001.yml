@@ -5,8 +5,10 @@ title: A tenant can read and act on the rent-statement help page
 text: 'The council publishes a help page explaining how to read a rent statement and
   pay what is owed. A tenant must be able to understand it on first reading, the page
   must follow the council''s British-English house style, it must read in the
-  council''s formal register, and it must do its job of instructing the tenant.
-  Being readable, being correctly styled, being in the right register and serving the
-  right purpose are independent goals, so the page adopts a readability standard, a
-  conventions standard, a tone standard and a purpose standard.'
+  council''s formal register, it must do its job of instructing the tenant, and it
+  must be pitched at a lay reader with no housing-finance knowledge. Being readable,
+  being correctly styled, being in the right register, serving the right purpose and
+  being pitched at the right reader are independent goals, so the page adopts a
+  readability standard, a conventions standard, a tone standard, a purpose standard
+  and an audience standard.'
 normative: false

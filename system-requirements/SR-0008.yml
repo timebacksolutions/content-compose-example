@@ -1,0 +1,12 @@
+uid: SR-0008
+type: system_requirement
+status: approved
+title: Explain rent-account terms in everyday words
+text: 'The page explains terms like "arrears", "credit" and "debit" in everyday words
+  the first time they appear, so a tenant with no housing-finance knowledge can follow
+  the statement.'
+links:
+- target: UR-0001
+  type: implements
+- target: "audience:SR-0003"
+  type: satisfies

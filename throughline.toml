@@ -5,26 +5,34 @@ format_version = 2
 # A worked example of a *composed* content project. This is an ordinary throughline
 # project — its own intent, user requirements and system requirements live under
 # intents/, user-requirements/ and system-requirements/ — that additionally adopts
-# FOUR orthogonal content standards by reference and cites their clauses on the
+# FIVE orthogonal content standards by reference and cites their clauses on the
 # system requirements they satisfy:
 #   - Plain-language (readability)        namespace `plain`
 #   - British-English conventions         namespace `conventions`
 #   - Tone — formal register              namespace `tone`
 #   - Purpose — instruct                  namespace `purpose`
+#   - Audience — general reader           namespace `audience`
 #
 # This is the orthogonality payoff: one page has to be readable AND correctly styled
-# AND in the right register AND doing the right communicative job, and those are
-# independent axes. The project takes exactly the four axes it needs and cites
-# `plain:SR-NNNN`, `conventions:SR-NNNN`, `tone:SR-NNNN` and `purpose:SR-NNNN` side by
-# side. The four sources never collide even though each numbers its items SR-0001
-# upward, because each is imported under its own namespace.
+# AND in the right register AND doing the right communicative job AND pitched at the
+# right reader, and those are independent axes. The project takes exactly the five
+# axes it needs and cites `plain:SR-NNNN`, `conventions:SR-NNNN`, `tone:SR-NNNN`,
+# `purpose:SR-NNNN` and `audience:SR-NNNN` side by side. The five sources never
+# collide even though each numbers its items SR-0001 upward, because each is imported
+# under its own namespace.
 #
-# Two of these axes are families of mutually-exclusive sibling sources: register
-# (throughline-tone-formal / -neutral / -informal) and purpose
-# (throughline-purpose-inform / -instruct / -persuade). A government rent-statement
-# help page composes the FORMAL register and the INSTRUCT purpose — its job is to help
-# a tenant read the statement and pay. A marketing page would swap `tone` for the
-# informal sibling and `purpose` for persuade, without touching the other axes.
+# Note the deliberate tension between two of these axes: `plain` is UNIVERSAL clarity
+# for any reader, while `audience` tunes how much prior knowledge and field vocabulary
+# the writing may assume for a SPECIFIC reader. They are independent and both compose.
+#
+# Three of these axes are families of mutually-exclusive sibling sources: register
+# (throughline-tone-formal / -neutral / -informal), purpose
+# (throughline-purpose-inform / -instruct / -persuade) and audience
+# (throughline-audience-expert / -practitioner / -general). A government rent-statement
+# help page composes the FORMAL register, the INSTRUCT purpose and the GENERAL-reader
+# audience — its job is to help a lay tenant read the statement and pay. A marketing
+# page would swap `tone` for the informal sibling and `purpose` for persuade, without
+# touching the other axes.
 #
 # Drive this project with `tl-compose`, never bare `tl`: the composition-aware
 # `check` merges the sources into one union graph and validates it. Bare `tl` fails
@@ -54,6 +62,11 @@ namespace = "purpose"
 url = "https://github.com/timebacksolutions/throughline-purpose-instruct"
 ref = "v2026-07"
 
+[[sources]]
+namespace = "audience"
+url = "https://github.com/timebacksolutions/throughline-audience-general"
+ref = "v2026-07"
+
 [grounding]
 root_types = ["intent"]
 delivery_roots = ["intent"]
@@ -61,7 +74,7 @@ ground_link_types = ["derives_from", "implements"]
 ai_origins = ["ai", "hybrid"]
 
 # The union is governed by THIS schema, so the consumer must declare types, links and
-# statuses that are a superset of what every source uses internally. All four sources
+# statuses that are a superset of what every source uses internally. All five sources
 # mark source_ref required and carry a `principle` grouping attr on their rules; here
 # those are optional, which still accepts the sources' items while not forcing this
 # project's own items to carry them.
@@ -79,7 +92,7 @@ types = ["derives_from", "implements", "satisfies", "relates"]
 derives_from = { from = ["user_requirement"], to = ["intent"] }
 implements   = { from = ["system_requirement"], to = ["user_requirement"] }
 # The borrowed-clause link: a page requirement satisfies a plain-language,
-# conventions, tone or purpose rule. `satisfies` is a traceability link, not a
+# conventions, tone, purpose or audience rule. `satisfies` is a traceability link, not a
 # grounding link, so a page SR still grounds through `implements`, not the standard.
 satisfies    = { from = ["system_requirement"], to = ["system_requirement"] }
 
