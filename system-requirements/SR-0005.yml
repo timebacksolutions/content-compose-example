@@ -1,0 +1,10 @@
+uid: SR-0005
+type: system_requirement
+status: approved
+title: Present the steps to pay as a numbered list
+text: 'The instructions for paying are shown as a numbered list, one action per step.'
+links:
+- target: UR-0001
+  type: implements
+- target: "plain:SR-0026"
+  type: satisfies

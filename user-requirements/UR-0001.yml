@@ -1,0 +1,9 @@
+uid: UR-0001
+type: user_requirement
+status: approved
+title: Publish a rent-statement help page a tenant can act on
+text: 'Publish a page that a tenant can skim, understand and use to pay what they owe
+  on time, written to the council house style.'
+links:
+- target: INT-0001
+  type: derives_from

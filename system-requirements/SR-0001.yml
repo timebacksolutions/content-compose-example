@@ -1,0 +1,11 @@
+uid: SR-0001
+type: system_requirement
+status: approved
+title: Lead with the amount due and the pay-by date
+text: 'The page opens with how to find the amount due and the date to pay by, before
+  any background about how statements are produced.'
+links:
+- target: UR-0001
+  type: implements
+- target: "plain:SR-0004"
+  type: satisfies

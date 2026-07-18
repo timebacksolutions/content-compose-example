@@ -1,0 +1,10 @@
+uid: SR-0002
+type: system_requirement
+status: approved
+title: Use sentence case for every heading
+text: 'Every heading and sub-heading on the page uses sentence case.'
+links:
+- target: UR-0001
+  type: implements
+- target: "mechanics:SR-0008"
+  type: satisfies

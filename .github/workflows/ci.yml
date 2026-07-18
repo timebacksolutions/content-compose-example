@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install throughline-compose
+        run: pip install "throughline-compose @ git+https://github.com/timebacksolutions/throughline-compose@main"
+
+      - name: Composition gate (the composed graph must stay sound)
+        run: tl-compose check --strict

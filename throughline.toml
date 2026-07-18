@@ -1,0 +1,79 @@
+[project]
+name = "Rent-statement help page (content-compose example)"
+format_version = 2
+
+# A worked example of a *composed* content project. This is an ordinary throughline
+# project — its own intent, user requirements and system requirements live under
+# intents/, user-requirements/ and system-requirements/ — that additionally adopts
+# TWO orthogonal content standards by reference and cites their clauses on the
+# system requirements they satisfy:
+#   - Plain-language (readability)      namespace `plain`
+#   - British-English mechanics         namespace `mechanics`
+#
+# This is the orthogonality payoff: one page has to be BOTH readable AND correctly
+# styled, and those are independent axes. The project takes exactly the two axes it
+# needs and cites `plain:SR-NNNN` and `mechanics:SR-NNNN` side by side. The two
+# sources never collide even though both number their items SR-0001 upward, because
+# each is imported under its own namespace.
+#
+# Drive this project with `tl-compose`, never bare `tl`: the composition-aware
+# `check` merges the sources into one union graph and validates it. Bare `tl` fails
+# fast the moment it meets a namespace-qualified reference it cannot resolve.
+#
+# Each source is adopted BY REFERENCE — a git `url` pinned to an edition `ref` —
+# never vendored or copied. tl-compose fetches the pinned ref into a per-user cache
+# outside this project, so this project's own item scan never sees the borrowed
+# graphs. Moving to a newer edition of a source is a one-line `ref` change here.
+[[sources]]
+namespace = "plain"
+url = "https://github.com/timebacksolutions/throughline-plain-language"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "mechanics"
+url = "https://github.com/timebacksolutions/throughline-mechanics-uk"
+ref = "v2026-07"
+
+[grounding]
+root_types = ["intent"]
+delivery_roots = ["intent"]
+ground_link_types = ["derives_from", "implements"]
+ai_origins = ["ai", "hybrid"]
+
+# The union is governed by THIS schema, so the consumer must declare types, links and
+# statuses that are a superset of what every source uses internally. Both sources mark
+# source_ref required and carry a `principle` grouping attr on their rules; here those
+# are optional, which still accepts the sources' items while not forcing this
+# project's own items to carry them.
+[types.user_requirement]
+attrs.source_ref = { required = false }
+
+[types.system_requirement]
+attrs.source_ref = { required = false }
+attrs.principle  = { required = false }
+
+[links]
+types = ["derives_from", "implements", "satisfies", "relates"]
+
+[link_rules]
+derives_from = { from = ["user_requirement"], to = ["intent"] }
+implements   = { from = ["system_requirement"], to = ["user_requirement"] }
+# The borrowed-clause link: a page requirement satisfies a plain-language or
+# mechanics rule. `satisfies` is a traceability link, not a grounding link, so a
+# page SR still grounds through `implements`, not through the borrowed standard.
+satisfies    = { from = ["system_requirement"], to = ["system_requirement"] }
+
+[status]
+values = ["proposed", "draft", "deferred", "approved", "ratified", "implemented",
+          "verified", "suspect", "rejected", "deleted"]
+
+[transitions]
+proposed    = ["draft", "approved", "ratified", "deferred", "rejected", "deleted"]
+draft       = ["approved", "deferred", "rejected", "deleted"]
+deferred    = ["draft", "approved", "rejected", "deleted"]
+approved    = ["ratified", "implemented", "deferred", "suspect", "rejected", "deleted"]
+ratified    = ["implemented", "suspect", "rejected", "deleted"]
+implemented = ["verified", "suspect", "rejected", "deleted"]
+verified    = ["implemented", "suspect", "deleted"]
+suspect     = ["approved", "ratified", "implemented", "verified", "rejected", "deleted"]
+rejected    = ["draft", "deleted"]

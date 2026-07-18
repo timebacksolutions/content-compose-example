@@ -1,0 +1,10 @@
+uid: SR-0003
+type: system_requirement
+status: approved
+title: Define housing terms on first use
+text: 'The page defines "arrears" and any other housing term the first time it appears.'
+links:
+- target: UR-0001
+  type: implements
+- target: "plain:SR-0008"
+  type: satisfies
