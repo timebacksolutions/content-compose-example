@@ -3,7 +3,7 @@
 Your rent statement shows how much you owe and the date to pay it by. Look at the top of
 the statement: the figure marked **Balance due** is the amount to pay, and the line
 marked **Payment due date** is the day we must receive it by. If the balance due is
-42.50 and the date is 1 July 2026, you need to pay 42.50 so that it reaches us on or
+£42.50 and the date is 1 July 2026, you need to pay £42.50 so that it reaches us on or
 before 1 July 2026.
 
 ## What the words on your statement mean
