@@ -1,0 +1,11 @@
+uid: SR-0010
+type: system_requirement
+status: approved
+title: Open with a descriptive title that works in search
+text: 'The page opens with a descriptive title — how to read your rent statement and
+  pay what you owe — that tells a reader arriving from search what the page is for.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0007"
+  type: satisfies

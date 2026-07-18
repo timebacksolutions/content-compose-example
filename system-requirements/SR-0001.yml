@@ -9,3 +9,7 @@ links:
   type: implements
 - target: "plain:SR-0004"
   type: satisfies
+- target: "medium:SR-0001"
+  type: satisfies
+- target: "medium:SR-0004"
+  type: satisfies

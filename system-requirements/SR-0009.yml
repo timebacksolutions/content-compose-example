@@ -1,0 +1,12 @@
+uid: SR-0009
+type: system_requirement
+status: approved
+title: Break the page into short headed sections
+text: 'The page is split into short sections under descriptive headings — what the
+  words mean, how to pay, and what to do if the amount looks wrong — so a reader can
+  scan to the part they need.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0002"
+  type: satisfies

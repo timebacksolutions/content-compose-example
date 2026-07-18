@@ -5,34 +5,36 @@ format_version = 2
 # A worked example of a *composed* content project. This is an ordinary throughline
 # project — its own intent, user requirements and system requirements live under
 # intents/, user-requirements/ and system-requirements/ — that additionally adopts
-# FIVE orthogonal content standards by reference and cites their clauses on the
+# SIX orthogonal content standards by reference and cites their clauses on the
 # system requirements they satisfy:
 #   - Plain-language (readability)        namespace `plain`
 #   - British-English conventions         namespace `conventions`
 #   - Tone — formal register              namespace `tone`
 #   - Purpose — instruct                  namespace `purpose`
 #   - Audience — general reader           namespace `audience`
+#   - Medium — web page                   namespace `medium`
 #
 # This is the orthogonality payoff: one page has to be readable AND correctly styled
 # AND in the right register AND doing the right communicative job AND pitched at the
-# right reader, and those are independent axes. The project takes exactly the five
-# axes it needs and cites `plain:SR-NNNN`, `conventions:SR-NNNN`, `tone:SR-NNNN`,
-# `purpose:SR-NNNN` and `audience:SR-NNNN` side by side. The five sources never
-# collide even though each numbers its items SR-0001 upward, because each is imported
-# under its own namespace.
+# right reader AND shaped for the channel it is delivered on, and those are independent
+# axes. The project takes exactly the six axes it needs and cites `plain:SR-NNNN`,
+# `conventions:SR-NNNN`, `tone:SR-NNNN`, `purpose:SR-NNNN`, `audience:SR-NNNN` and
+# `medium:SR-NNNN` side by side. The six sources never collide even though each numbers
+# its items SR-0001 upward, because each is imported under its own namespace.
 #
 # Note the deliberate tension between two of these axes: `plain` is UNIVERSAL clarity
 # for any reader, while `audience` tunes how much prior knowledge and field vocabulary
 # the writing may assume for a SPECIFIC reader. They are independent and both compose.
 #
-# Three of these axes are families of mutually-exclusive sibling sources: register
+# Four of these axes are families of mutually-exclusive sibling sources: register
 # (throughline-tone-formal / -neutral / -informal), purpose
-# (throughline-purpose-inform / -instruct / -persuade) and audience
-# (throughline-audience-expert / -practitioner / -general). A government rent-statement
-# help page composes the FORMAL register, the INSTRUCT purpose and the GENERAL-reader
-# audience — its job is to help a lay tenant read the statement and pay. A marketing
-# page would swap `tone` for the informal sibling and `purpose` for persuade, without
-# touching the other axes.
+# (throughline-purpose-inform / -instruct / -persuade), audience
+# (throughline-audience-expert / -practitioner / -general) and medium
+# (throughline-medium-web / -letter). A government rent-statement help page composes the
+# FORMAL register, the INSTRUCT purpose, the GENERAL-reader audience and the WEB-page
+# medium — its job is to help a lay tenant read the statement and pay online. The
+# sibling project content-compose-letter-example keeps all of that and swaps only the
+# medium for the LETTER sibling, showing how one axis changes without touching the rest.
 #
 # Drive this project with `tl-compose`, never bare `tl`: the composition-aware
 # `check` merges the sources into one union graph and validates it. Bare `tl` fails
@@ -65,6 +67,11 @@ ref = "v2026-07"
 [[sources]]
 namespace = "audience"
 url = "https://github.com/timebacksolutions/throughline-audience-general"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "medium"
+url = "https://github.com/timebacksolutions/throughline-medium-web"
 ref = "v2026-07"
 
 [grounding]

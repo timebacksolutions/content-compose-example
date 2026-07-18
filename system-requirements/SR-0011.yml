@@ -1,0 +1,11 @@
+uid: SR-0011
+type: system_requirement
+status: approved
+title: Do not frame the page as a letter
+text: 'The page carries no address block, salutation or sign-off; it is framed as a
+  web page by its title, not as correspondence.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0008"
+  type: satisfies
