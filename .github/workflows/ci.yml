@@ -16,8 +16,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      # From PyPI, so the job needs no credentials for the (private) compose repo.
       - name: Install throughline-compose
-        run: pip install "throughline-compose @ git+https://github.com/timebacksolutions/throughline-compose@main"
+        run: pip install throughline-compose
 
       - name: Composition gate (the composed graph must stay sound)
         run: tl-compose check --strict
