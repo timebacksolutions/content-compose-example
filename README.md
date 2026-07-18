@@ -36,6 +36,18 @@ the **general**-reader audience; a chatty expert-facing marketing page would swa
 `url`/`ref`s for `-informal`, `-persuade` and `-expert` without touching the readability
 or conventions axes.
 
+## The authored page
+
+The requirements graph is the *spec*; the page it governs is
+[`content/rent-statement-help-page.md`](content/rent-statement-help-page.md). throughline
+does not lint prose, so the artifact is a plain file — but you can read it against the
+graph and see each composed axis bite: the formal register (no contractions — "do not",
+"cannot"), the general-reader glossary of *arrears*, *debit* and *credit*, the sentence-
+case headings and GOV.UK number and date style ("42.50", "1 July 2026"), the numbered
+pay steps, and the inverted-pyramid opening that leads with the balance due and payment
+due date. Swap a sibling axis and the artifact would be rewritten to match; the graph is
+what says how.
+
 ## How it's wired
 
 - The project's own graph lives under `intents/`, `user-requirements/` and
