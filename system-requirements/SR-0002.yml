@@ -6,5 +6,5 @@ text: 'Every heading and sub-heading on the page uses sentence case.'
 links:
 - target: UR-0001
   type: implements
-- target: "mechanics:SR-0008"
+- target: "conventions:SR-0008"
   type: satisfies

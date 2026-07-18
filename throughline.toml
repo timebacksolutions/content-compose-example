@@ -8,11 +8,11 @@ format_version = 2
 # TWO orthogonal content standards by reference and cites their clauses on the
 # system requirements they satisfy:
 #   - Plain-language (readability)      namespace `plain`
-#   - British-English mechanics         namespace `mechanics`
+#   - British-English conventions         namespace `conventions`
 #
 # This is the orthogonality payoff: one page has to be BOTH readable AND correctly
 # styled, and those are independent axes. The project takes exactly the two axes it
-# needs and cites `plain:SR-NNNN` and `mechanics:SR-NNNN` side by side. The two
+# needs and cites `plain:SR-NNNN` and `conventions:SR-NNNN` side by side. The two
 # sources never collide even though both number their items SR-0001 upward, because
 # each is imported under its own namespace.
 #
@@ -30,8 +30,8 @@ url = "https://github.com/timebacksolutions/throughline-plain-language"
 ref = "v2026-07"
 
 [[sources]]
-namespace = "mechanics"
-url = "https://github.com/timebacksolutions/throughline-mechanics-uk"
+namespace = "conventions"
+url = "https://github.com/timebacksolutions/throughline-conventions-uk"
 ref = "v2026-07"
 
 [grounding]
@@ -59,7 +59,7 @@ types = ["derives_from", "implements", "satisfies", "relates"]
 derives_from = { from = ["user_requirement"], to = ["intent"] }
 implements   = { from = ["system_requirement"], to = ["user_requirement"] }
 # The borrowed-clause link: a page requirement satisfies a plain-language or
-# mechanics rule. `satisfies` is a traceability link, not a grounding link, so a
+# conventions rule. `satisfies` is a traceability link, not a grounding link, so a
 # page SR still grounds through `implements`, not through the borrowed standard.
 satisfies    = { from = ["system_requirement"], to = ["system_requirement"] }
 
