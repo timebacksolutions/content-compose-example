@@ -8,3 +8,5 @@ links:
   type: implements
 - target: "plain:SR-0026"
   type: satisfies
+- target: "conventions:SR-0021"
+  type: satisfies

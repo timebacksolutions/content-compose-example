@@ -8,13 +8,13 @@ before 1 July 2026.
 
 ## What the words on your statement mean
 
-Your statement uses a few words that have a particular meaning here:
+Your statement uses a few words in a particular way:
 
-- **Arrears** means rent you owe from an earlier date that has not yet been paid. It is
-  money you still need to pay on top of this period's rent.
-- **A debit** is an amount added to what you owe, such as a week's rent.
-- **A credit** is an amount taken off what you owe, such as a payment you have made or
-  Housing Benefit paid on your behalf.
+- **arrears** — rent you owe from an earlier date that has not yet been paid, on top of
+  this period's rent
+- **a debit** — an amount added to what you owe, such as a week's rent
+- **a credit** — an amount taken off what you owe, such as a payment you have made or
+  Housing Benefit paid on your behalf
 
 If your statement shows a balance in credit, you do not owe anything and you do not need
 to do anything.
