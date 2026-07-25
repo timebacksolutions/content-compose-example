@@ -1,7 +1,7 @@
 # content-compose-example
 
 A worked example of a **composed content project** built with
-[throughline-compose](https://github.com/timebacksolutions/throughline-compose).
+[throughline-compose](https://github.com/rhodium-org/throughline-compose).
 
 It models one real writing task — a council **rent-statement help page** — that has to
 be readable, correctly styled, in the right register, doing the right communicative job,
@@ -11,12 +11,12 @@ and cites their clauses side by side on the requirements they satisfy:
 
 | Namespace | Source | Axis |
 |---|---|---|
-| `plain` | [throughline-plain-language](https://github.com/timebacksolutions/throughline-plain-language) `@v2026-07` | readability |
-| `conventions` | [throughline-conventions-uk](https://github.com/timebacksolutions/throughline-conventions-uk) `@v2026-07` | British-English conventions |
-| `tone` | [throughline-tone-formal](https://github.com/timebacksolutions/throughline-tone-formal) `@v2026-07` | register (formal) |
-| `purpose` | [throughline-purpose-instruct](https://github.com/timebacksolutions/throughline-purpose-instruct) `@v2026-07` | purpose (instruct) |
-| `audience` | [throughline-audience-general](https://github.com/timebacksolutions/throughline-audience-general) `@v2026-07` | audience (general reader) |
-| `medium` | [throughline-medium-web](https://github.com/timebacksolutions/throughline-medium-web) `@v2026-07` | medium (web page) |
+| `plain` | [throughline-plain-language](https://github.com/rhodium-org/throughline-plain-language) `@v2026-07` | readability |
+| `conventions` | [throughline-conventions-uk](https://github.com/rhodium-org/throughline-conventions-uk) `@v2026-07` | British-English conventions |
+| `tone` | [throughline-tone-formal](https://github.com/rhodium-org/throughline-tone-formal) `@v2026-07` | register (formal) |
+| `purpose` | [throughline-purpose-instruct](https://github.com/rhodium-org/throughline-purpose-instruct) `@v2026-07` | purpose (instruct) |
+| `audience` | [throughline-audience-general](https://github.com/rhodium-org/throughline-audience-general) `@v2026-07` | audience (general reader) |
+| `medium` | [throughline-medium-web](https://github.com/rhodium-org/throughline-medium-web) `@v2026-07` | medium (web page) |
 
 This is the orthogonality payoff: the page takes exactly the six axes it needs and
 combines them. Each source numbers its items `SR-0001` upward, yet they never collide
