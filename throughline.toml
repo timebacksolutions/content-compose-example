@@ -46,32 +46,32 @@ format_version = 2
 # graphs. Moving to a newer edition of a source is a one-line `ref` change here.
 [[sources]]
 namespace = "plain"
-url = "https://github.com/timebacksolutions/throughline-plain-language"
+url = "https://github.com/rhodium-org/throughline-plain-language"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "conventions"
-url = "https://github.com/timebacksolutions/throughline-conventions-uk"
+url = "https://github.com/rhodium-org/throughline-conventions-uk"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "tone"
-url = "https://github.com/timebacksolutions/throughline-tone-formal"
+url = "https://github.com/rhodium-org/throughline-tone-formal"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "purpose"
-url = "https://github.com/timebacksolutions/throughline-purpose-instruct"
+url = "https://github.com/rhodium-org/throughline-purpose-instruct"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "audience"
-url = "https://github.com/timebacksolutions/throughline-audience-general"
+url = "https://github.com/rhodium-org/throughline-audience-general"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "medium"
-url = "https://github.com/timebacksolutions/throughline-medium-web"
+url = "https://github.com/rhodium-org/throughline-medium-web"
 ref = "v2026-07"
 
 [grounding]
