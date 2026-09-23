@@ -1,7 +1,7 @@
 # content-compose-example
 
 A worked example of a **composed content project** built with
-[throughline-compose](https://github.com/rhodium-org/throughline-compose).
+[throughline](https://pypi.org/project/throughline/) 3.11.0 or later.
 
 It models one real writing task — a council **rent-statement help page** — that has to
 be readable, correctly styled, in the right register, doing the right communicative job,
@@ -66,10 +66,11 @@ match; the graph is what says how.
 ## Running it
 
 ```sh
-tl-compose check --strict     # fetches all six pinned sources, merges, validates
-tl-compose trace SR-0004      # show a requirement's throughline across the axes
+pip install 'throughline>=3.11.0'
+tl check --strict   # fetches all six pinned sources, merges, validates
+tl trace SR-0004    # show a requirement's throughline across the axes
 ```
 
-Drive this project with `tl-compose`, never bare `tl`: bare `tl` fails fast the moment
-it meets a namespace-qualified reference (`plain:SR-0004`) it cannot resolve, because
-only the composition-aware tool fetches and merges the sources.
+`tl` composes the declared sources itself, so `check`, `trace` and the other reads answer
+over the union and a namespace-qualified reference (`plain:SR-0004`) resolves. A `tl` older
+than 3.11.0 reports it as `namespace-unresolved`.

@@ -36,12 +36,13 @@ format_version = 3
 # sibling project content-compose-letter-example keeps all of that and swaps only the
 # medium for the LETTER sibling, showing how one axis changes without touching the rest.
 #
-# Drive this project with `tl-compose`, never bare `tl`: the composition-aware
-# `check` merges the sources into one union graph and validates it. Bare `tl` fails
-# fast the moment it meets a namespace-qualified reference it cannot resolve.
+# Drive this project with `tl` from throughline 3.11.0 or later, which composes the
+# declared sources itself: `check` merges them into one union graph and validates it,
+# and `trace`, `query` and the other reads answer over the same union. A `tl` older
+# than 3.11.0 reports a namespace-qualified reference as `namespace-unresolved`.
 #
 # Each source is adopted BY REFERENCE — a git `url` pinned to an edition `ref` —
-# never vendored or copied. tl-compose fetches the pinned ref into a per-user cache
+# never vendored or copied. `tl` fetches the pinned ref into a per-user cache
 # outside this project, so this project's own item scan never sees the borrowed
 # graphs. Moving to a newer edition of a source is a one-line `ref` change here.
 [[sources]]
